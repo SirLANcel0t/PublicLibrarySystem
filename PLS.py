@@ -1,10 +1,11 @@
 """
-
 Public Library System! 
 Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D.
 
 """
+import os
 
+clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
 # het maken van PublicLibrary, de class
 class PublicLibrary:
@@ -67,6 +68,20 @@ class Librarian(Person):
 
     mayAddBooks = True
 
+    def createSubscriber(self):
+        """
+        Maak een nieuwe klantaccount (Subscriber)
+        """
+        pass
+    
+    def createBook(self):
+        """
+        Maak een nieuw boek aan met ISBN en naam enzo
+        """
+        pass
+
+
+
 class Subscriber(Person):
     """
     Subscriber is een klant. Objecten van deze class kunnen boeken zoeken, boekeninformatie inzien, boeken lenen voor een
@@ -95,6 +110,25 @@ class Subscriber(Person):
     def login(self):
         pass
 
+
+class Book:
+    def __init__(self, author, country, imageLink, language, link, pages, title, year):
+        self.author = author
+        self.country = country
+        self.imageLink = imageLink
+        self.language = language
+        self.link = link
+        self.pages = pages
+        self.title = title
+        self.year = year
+    
+    def GetInfo(self):
+        print(f"Title: {self.title}\nAuthor: {self.author}\nCountry: {self.country}\nLanguage: {self.language}\nYear: {self.year}\nPages: {self.pages}\nLink: {self.link}\nImage link: {self.imageLink}")
+
+        #print(f"Author: {self.author}\n")
+    
+
+
 class Catalog:
 
     """
@@ -110,7 +144,6 @@ class Catalog:
 
 
 
-
 nextInLine = 5
 # json bestand uitlezen en laatste cijfer zoeken
 
@@ -121,22 +154,32 @@ hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaa
 # dit wordt de te runnen code, het begin van de interface
 print("Welcome to MLB Public Library System \nThis interface was made by Mike, Luuk and Bruno from class INF1D")
 
+answer = ""
 
-print("What would you like to do? \n 1. Login \n 2. Browse books \n 3. Exit Program")
+possibleanswers = ["1", "2", "3", "4"]
+while answer not in possibleanswers:
+    print("What would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje)")
 
-answer = input()
+    answer = input()
 
-if answer == "1" :
-    print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
 
-elif answer == "2": 
-    print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
+    if answer == "1" :
+        print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
 
-elif answer == "3":
-    print("OK, cya")
+    elif answer == "2": 
+        print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
 
-else:
-    print("Unrecognized command")
+    elif answer == "3":
+        print("OK, cya")
+        break
 
-answer = input("Press any key to continue ...")
+    elif answer == "4":
+        boekje = Book("jezus", "israel", "heb ik niet", "hebreeuws", "internet hadden ze toen nog niet", 800, "de bijbel", 0)
+
+        boekje.GetInfo()
+
+    else:
+        print("Unrecognized command")
+
+    answer = input("Press any key to continue ...")
 
