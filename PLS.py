@@ -13,7 +13,7 @@ class PublicLibrary:
     def __init__(self, listofcustomers):
         self.listofcustomers = listofcustomers
     
-    def backupSystem():
+    def backupSystem(self):
         """
         een systeembackup slaat alle informatie over boeken en gebruikers op. 
         De vraag is alleen, moet alles in een .JSON bestand? Of gaan de boeken in een JSON bestand en de klanten
@@ -21,20 +21,20 @@ class PublicLibrary:
         """
         pass
 
-    def loadSystemBackup():
+    def loadSystemBackup(self):
         """
         Het inladen van een gemaakte backup. Waarschijnlijk bestaat dit uit een .JSON bestand met boeken, en een .CSV bestand
         met klanten.
         """ 
         pass
 
-    def loadCustomers():
+    def loadCustomers(self):
         """
         Het inladen van een lijst met klanten middels een .CSV bestand.
         """
         pass
 
-    def exportCustomers():
+    def exportCustomers(self):
         """
         Klanten worden ingeladen middels het .CSV bestand wat we meegekregen hebben vanuit de opdracht, dus het is aannemelijk
         om er vanuit te gaan dat het exporteren van klanten ook in een .CSV bestand moet.
@@ -87,10 +87,11 @@ class Subscriber(Person):
     
     # het is misschien niet heel logisch om login bij Customer te hebben
     # ik bedoel de customer krijg je als je inlogt, toch? 
-    def login():
+    def login(self):
         pass
 
-nextInLine = # json bestand uitlezen en laatste cijfer zoeken
+nextInLine = 5
+# json bestand uitlezen en laatste cijfer zoeken
 
-hans = Customer(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "0619283755")
+hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
 
