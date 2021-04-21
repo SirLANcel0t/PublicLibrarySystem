@@ -1,4 +1,9 @@
-print("Hello World!")
+"""
+
+Public Library System! 
+Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D.
+
+"""
 
 
 # het maken van PublicLibrary, de class
@@ -90,8 +95,48 @@ class Subscriber(Person):
     def login(self):
         pass
 
+class Catalog:
+
+    """
+    In de catalogus staan alle boeken die in de bibliotheek te vinden zijn. Hier binnen komt hoogst waarschijnlijk
+    de lijst met alle boeken, en deze class wordt geraadpleegd wanneer klanten op zoek zijn naar een boek. 
+    Als een boek geleend wordt, werkt deze class samen met class LoanAdministration en wordt er een loanItem
+    aangemaakt.
+    """
+    def __init__(self):
+        pass
+
+
+
+
+
+
 nextInLine = 5
 # json bestand uitlezen en laatste cijfer zoeken
 
 hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
+
+
+
+# dit wordt de te runnen code, het begin van de interface
+print("Welcome to MLB Public Library System \nThis interface was made by Mike, Luuk and Bruno from class INF1D")
+
+
+print("What would you like to do? \n 1. Login \n 2. Browse books \n 3. Exit Program")
+
+answer = input()
+
+if answer == "1" :
+    print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
+
+elif answer == "2": 
+    print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
+
+elif answer == "3":
+    print("OK, cya")
+
+else:
+    print("Unrecognized command")
+
+answer = input("Press any key to continue ...")
 
