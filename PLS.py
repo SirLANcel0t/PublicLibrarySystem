@@ -7,6 +7,16 @@ import os
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
+
+"""
+Volgorde van classes: 
+PublicLibrary
+Person
+Subscriber
+Book
+Catalog
+"""
+
 # het maken van PublicLibrary, de class
 class PublicLibrary:
     """
@@ -53,7 +63,7 @@ class PublicLibrary:
 class Person:
     """
     dit is de class Person, een superclass van librarian  en Customer. person is een 
-    abstract class want van Person bestaan geen objecten. 
+    abstract class want van Person bestaan geen objecten (als het goed is). 
 
     """ 
     mayAddBooks = False
@@ -125,8 +135,11 @@ class Book:
     def GetInfo(self):
         print(f"Title: {self.title}\nAuthor: {self.author}\nCountry: {self.country}\nLanguage: {self.language}\nYear: {self.year}\nPages: {self.pages}\nLink: {self.link}\nImage link: {self.imageLink}")
 
-        #print(f"Author: {self.author}\n")
-    
+class BookItem:
+    """
+    Het verschil met Book en BookItem is dat Book zegmaar de informatie is over het boek in de applicatie,
+    en BookItem is het daadwerkelijke boek. Als je een boek leent dan leen je een BookItem en niet een Book. 
+    """
 
 
 class Catalog:
@@ -140,6 +153,36 @@ class Catalog:
     def __init__(self):
         pass
 
+class LoanAdministration: 
+    """
+    In deze class LoanAdministration staan de LoanItems oftewel de informatie over uitgeleende items.
+    Dat zijn uitgeleende boeken met bijbehorende informatie over wanneer ze terug moeten
+    """
+    # een lijst met alle loanitems
+    loanItems = list()
+
+    def GetInfo(self):
+        for item in self.loanItems:
+            print(f" Book: {item.bookItem}\n Date loaned: {item.dateOfLoan}\n Expected return date: {item.dateOfReturn}\n")
+
+class LoanItem:
+    """
+    In deze class staat informatie van boeken en van wanneer tot wanneer ze uitgeleend zijn. Dit is 
+    eigenlijk het fysieke boek in de bibliotheek.  
+    """
+
+    def __init__(self, whichBook, dateOfLoan, dateOfReturn):
+        """
+        whichBook moet een bookItem zijn
+        dateOfLoan is een string met wanneer hij uitgeleend is
+        dateOfReturn is een string wanneer hij terug moet zijn
+        """
+        self.bookItem = whichBook
+        self.dateOfLoan = dateOfLoan
+        self.dateOfReturn = dateOfReturn
+
+
+
 
 
 
@@ -150,8 +193,9 @@ nextInLine = 5
 hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
 
 
-
+#####
 # dit wordt de te runnen code, het begin van de interface
+#####
 print("Welcome to MLB Public Library System \nThis interface was made by Mike, Luuk and Bruno from class INF1D")
 
 answer = ""
