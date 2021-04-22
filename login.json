@@ -1,0 +1,25 @@
+{
+    "people": [
+        {
+            "name": "Scott",
+            "username": "test",
+            "password": "test",
+            "website": "stackabuse.com",
+            "from": "Nebraska"
+        },
+        {
+            "name": "Larry",
+            "username": "test",
+            "password": "test1",
+            "website": "google.com",
+            "from": "Michigan"
+        },
+        {
+            "name": "Tim",
+            "username": "test",
+            "password": "test2",
+            "website": "apple.com",
+            "from": "Alabama"
+        }
+    ]
+}
