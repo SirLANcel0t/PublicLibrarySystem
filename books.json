@@ -1,0 +1,54 @@
+{
+    "books": [
+        {
+            "title": "The Lord of the Rings",
+            "author": "J.R.R. Tolkien",
+            "pages": 1178,
+            "language": "English",
+            "year": "1954",
+            "country": "???",
+            "link": "???",
+            "imageLink": "??"
+        },
+        {
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "pages": 304,
+            "language": "English",
+            "year": "1937",
+            "country": "???",
+            "link": "?",
+            "imageLink": "?"
+        },
+        {
+            "title": "One Hundred Years of Solitude",
+            "author": "Gabriel García Márquez",
+            "pages": 417,
+            "language": "English",
+            "year": "1967",
+            "country": "Colombia",
+            "link": "??",
+            "imageLink": "??"
+        },
+        {
+            "title": "Green Eggs and Ham",
+            "author": "Dr. Seuss",
+            "pages": 64,
+            "language": "English",
+            "year": "1988",
+            "country": "???",
+            "link": "??",
+            "imageLink": "??"
+        },
+        {
+            "title": "Dune",
+            "author": "Frank Herbert",
+            "pages": 688,
+            "language": "English",
+            "year": "1965",
+            "country": "???",
+            "link": "??",
+            "imageLink": "??"
+        }
+    ]
+}

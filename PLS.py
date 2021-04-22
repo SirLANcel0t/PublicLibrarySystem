@@ -4,6 +4,7 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 
 """
 import os
+import json
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
@@ -196,18 +197,51 @@ print("Welcome to MLB Public Library System \nThis interface was made by Mike, L
 
 answer = ""
 
+def getAllBooks():
+    clear()
+    with open('books.json') as json_file:
+        books = json.load(json_file)
+        bookNumber = 1
+        for book in books['books']:
+            print(f"""
+            ID: {bookNumber}
+            Title: {book['title']}
+            Author: {book['author']}
+            Language: {book['language']}
+            """)
+            bookNumber += 1
+    print("\nPlease choose a book by book ID to view more details about the book.")
+    bookIDChoice = int(input(">>> "))
+    print(books['books'][bookIDChoice-1])
+    print(f"""
+        Title: {book['title']}
+        Author: {book['author']}
+        Language: {book['language']}
+        Total pages: {book['pages']}
+        Published in: {book['year']}
+    """)
+
+    bookDetailChoice = int(input("1. Loan this book\n2. Go back to overview\nEnter a number\n>>> "))
+    if bookDetailChoice == 1:
+        print("eyyy lmao veel plezier met je boek vriend")
+        exit()
+    elif bookDetailChoice == 2:
+        getAllBooks()
+
+
 possibleanswers = ["1", "2", "3", "4"]
 while answer not in possibleanswers:
     print("What would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje)")
 
-    answer = input()
+    answer = input("\n Please enter a number \n >>> ")
 
 
     if answer == "1" :
         LoginSystem.loginUser()
 
     elif answer == "2": 
-        print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
+        # print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
+        getAllBooks()
 
     elif answer == "3":
         print("OK, cya")
