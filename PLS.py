@@ -114,11 +114,6 @@ class Subscriber(Person):
         self.userName = userName
         self.password = password
         self.telephoneNumber = telephoneNumber
-    
-    # het is misschien niet heel logisch om login bij Customer te hebben
-    # ik bedoel de customer krijg je als je inlogt, toch? 
-    def login(self):
-        pass
 
 
 class Book:
@@ -149,6 +144,8 @@ class Catalog:
     de lijst met alle boeken, en deze class wordt geraadpleegd wanneer klanten op zoek zijn naar een boek. 
     Als een boek geleend wordt, werkt deze class samen met class LoanAdministration en wordt er een loanItem
     aangemaakt.
+
+    In deze class komt een lijst met Books. Dus niet de bookItems, want dat is voor de LoanAdministration. 
     """
     def __init__(self):
         pass
@@ -182,9 +179,9 @@ class LoanItem:
         self.dateOfReturn = dateOfReturn
 
 
-
-
-
+class LoginSystem:
+    def loginUser(self):
+        pass
 
 
 nextInLine = 5
