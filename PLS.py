@@ -58,6 +58,9 @@ class PublicLibrary:
         """
         pass
 
+    def loginUser(self):
+        print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
+
 
 
 class Person:
@@ -179,10 +182,6 @@ class LoanItem:
         self.dateOfReturn = dateOfReturn
 
 
-class LoginSystem:
-    def loginUser(self):
-        pass
-
 
 nextInLine = 5
 # json bestand uitlezen en laatste cijfer zoeken
@@ -205,7 +204,7 @@ while answer not in possibleanswers:
 
 
     if answer == "1" :
-        print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
+        PublicLibrary.loginUser(self)
 
     elif answer == "2": 
         print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
