@@ -1,6 +1,6 @@
 """
 Public Library System! 
-Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D.
+Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 
 """
 import os
@@ -67,7 +67,6 @@ class Person:
 
     """ 
     mayAddBooks = False
-
 class Librarian(Person):
     """
     librarian is een subclass van Person. de librarian is de beheerder van het systeem en kan het systeem backuppen,
@@ -181,7 +180,7 @@ class LoanItem:
 
 class LoginSystem:
     def loginUser(self):
-        pass
+        print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
 
 
 nextInLine = 5
@@ -205,7 +204,7 @@ while answer not in possibleanswers:
 
 
     if answer == "1" :
-        print("You typed: 1. Login . But I don't know how to do that yet. Please check back later")
+        LoginSystem.loginUser()
 
     elif answer == "2": 
         print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
