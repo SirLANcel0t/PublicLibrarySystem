@@ -144,6 +144,9 @@ class Subscriber(Person):
         self.password = password
         self.telephoneNumber = telephoneNumber
 
+    def __str__(self):
+        return f"Usernumber: {self.userNumber}\nName: {self.givenName} {self.surName}\nUsername: {self.userName} \n"
+
 
 class Book:
     def __init__(self, author, country, imageLink, language, link, pages, title, year):
@@ -218,7 +221,7 @@ class LoanItem:
 nextInLine = 5
 # json bestand uitlezen en laatste cijfer zoeken
 
-hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
+
 
 
 
@@ -232,10 +235,10 @@ print("Welcome to MLB Public Library System \nThis interface was made by Mike, L
 
 def MenuNoLogin(): 
     global currentUser
-    possibleanswers = ["1", "2", "3", "4"]
+    possibleanswers = ["1", "2", "3", "4", "5"]
     answer = ""
     while answer not in possibleanswers:
-        print("Hi, anonymous user. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje)")
+        print("Hi, anonymous user. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje) \n 5. (test user object) \n")
 
         answer = input()
 
@@ -254,7 +257,11 @@ def MenuNoLogin():
             boekje = Book("jezus", "israel", "heb ik niet", "hebreeuws", "internet hadden ze toen nog niet", 800, "de bijbel", 0)
 
             boekje.GetInfo()
+        
+        elif answer == "5":
+            hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
 
+            print(hans)
         else:
             print("Unrecognized command")
 
