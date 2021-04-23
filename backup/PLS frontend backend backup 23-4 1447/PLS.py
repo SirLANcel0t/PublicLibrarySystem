@@ -4,7 +4,6 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 
 """
 import PLSbackend as BE
-
 currentUser = "nobody"
 
 print(
@@ -91,9 +90,6 @@ def MenuLibrarian():
             print("Unrecognised command!")
 
         answer = input("Press any key to continue ...")
-
-
-currentUser = "nobody"
 
 def RunProgram():
     if currentUser == "nobody":

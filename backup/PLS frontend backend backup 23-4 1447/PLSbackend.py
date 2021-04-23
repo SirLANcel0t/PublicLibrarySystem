@@ -5,8 +5,6 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 """
 import os
 import json
-import jsonloads
-from jsonloads import data
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
@@ -208,86 +206,9 @@ class Catalog:
 
     @staticmethod 
     def BookBrowser():
-        clear()
-        print("Tada een lijst met boeken")
+        print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
 
-        def bookView():
-            bookIDCounter = 1
-            with open('books.json') as json_file:
-                bookCatalog = json.load(json_file)
-                for book in bookCatalog['books']:
-                    print(f"Book ID: {bookIDCounter}")
-                    print('Title: ' + book['title'])
-                    print('Author: ' + book['author'])
-                    print('Language: ' + book['language'])
-                    print('')
-                    bookIDCounter += 1
-            print("""
-            Would you like to:
-            1. Pick a book.
-            2. Search book by Title.
-            3. Search by Author. 
-            4. Search by publishing year.
-            5. Search by Language.
-            """)
-            bookViewMenuChoice = int(input(">>> "))
-            if bookViewMenuChoice == 1:
-                detailedBookView(bookIDCounter, bookCatalog)
-            elif bookViewMenuChoice == 2:
-                searchBookCatalog(bookCatalog, "title")
-            elif bookViewMenuChoice == 3:
-                searchBookCatalog(bookCatalog, "author")
-            elif bookViewMenuChoice == 4:
-                searchBookCatalog(bookCatalog, "year")
-            elif bookViewMenuChoice == 5:
-                searchBookCatalog(bookCatalog, "year")
-            else:
-                print("Entered wrong number. Please try again.")
-
-        def searchBookCatalog(bookCatalog, value):
-            userBookSearch = input("Please enter the exact phrase.\n>>> ")
-            for book in bookCatalog['books']:
-                if userBookSearch == book[value]:
-                    print('Title: ' + book['title'])
-                    print('Author: ' + book['author'])
-                    print('Language: ' + book['year'])
-                    print('Language: ' + book['language'])
-                    print('Country: ' + book['country'])
-                    print('Cover Imagse: ' + book['imageCover'])
-
-        def detailedBookView(bookIDCounter, bookCatalog):
-            print("Please pick a book to see a more detailed view.")
-            pickedBookID = int(input(">>> "))
-            if pickedBookID > bookIDCounter:
-                print("This Book ID does not exist. Please try again.")
-                detailedBookView(bookIDCounter, bookCatalog)
-            clear()
-            print('Title: ' + bookCatalog['books'][pickedBookID-1]['title'])
-            print('Author: ' + bookCatalog['books'][pickedBookID-1]['author'])
-            print('Language: ' + bookCatalog['books'][pickedBookID-1]['year'])
-            print('Language: ' + bookCatalog['books'][pickedBookID-1]['language'])
-            print('Country: ' + bookCatalog['books'][pickedBookID-1]['country'])
-            print('Cover Imagse: ' + bookCatalog['books'][pickedBookID-1]['imageCover'])
-            detailedBookChoice()
-
-
-        def detailedBookChoice():
-            print("\nWould you like to loan this book?\n 1. Hell yeah brother!\n 2. Show me all books again.\n 3. I would like to go to Hawaii, please.")
-            userDetailedChoise = int(input(">>> "))
-
-            if userDetailedChoise == 1:
-                print("Right on, enjoy the book mate!")
-                exit()
-            elif userDetailedChoise == 2:
-                Catalog.BookBrowser()
-            elif userDetailedChoise == 3:
-                print("Sir, this is a Public Library System")
-                detailedBookChoice()
-            else:
-                detailedBookChoice()
-
-        bookView()
-
+    
 
 class LoanAdministration: 
     """
