@@ -302,7 +302,7 @@ class LoanAdministration:
         possibleanswers = ["1", "2", "3", "4", "5", "9"]
         answer = ""
         while answer not in possibleanswers:
-
+            pass
     @staticmethod
     def GetInfo(self):
         for item in self.loanItems:
