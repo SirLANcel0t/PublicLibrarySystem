@@ -4,6 +4,7 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 
 """
 import os
+import json
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
@@ -71,9 +72,13 @@ class PublicLibrary:
         print("You typed: 1. Login .")
 
         username = input("Type username: ")
-        password = input("Type password: ")
 
-        if username == "librarian" and password == "secret":
+        # ik schrap de wachtwoorden. in het CSV bestand komen ook geen wachtwoorden voor.
+        # je logt gewoon in door je username in te voeren.
+        # als de username "librarian" is log je in als de admin, en anders als user
+        # password = input("Type password: ")
+
+        if username == "librarian":
             currentUser = "librarian"
             MenuLibrarian()
         else:
@@ -106,12 +111,48 @@ class Librarian(Person):
     """
 
     mayAddBooks = True
-
-    def createSubscriber(self):
+    @staticmethod
+    def createSubscriber():
         """
         Maak een nieuwe klantaccount (Subscriber)
         """
-        pass
+
+        newcustomernumber = int(input("Enter a customer number: "))
+        # if customernumber in customer.json ofzoiets return een error
+        # zegmaar dat als dit getal al bestaat in de customerlijst dat je dan een waarschuwing krijgt
+
+        newcustomergender = ""
+        while (newcustomergender != "male") and (newcustomergender != "female"):
+            newcustomergender = input("Enter customer gender (male / female): ")
+        nameSet = "Dutch"
+        newcustomerfirstname = input("Enter customer's first name: ")
+        newcustomerlastname = input("Enter customer's last name: ")
+        newcustomerstreetaddress = input("Enter customer's adress: ")
+        newcustomerzipcode = input("Enter customer's zipcode: ")
+        newcustomercity = input("Enter customer's city: ")
+        newcustomeremailaddress = input("Enter customer's email adress: ")
+        newcustomerusername = input("Enter customer's username: ")
+        newcustomertelephonenumber = int(input("Enter customer's telephone number: "))
+
+        # en dit dan converteren naar JSON om het daarna in een bestand te schrijven
+        newcustomerdict =  {
+            "Number" : newcustomernumber,
+            "NameSet" : nameSet,
+            "Gender" : newcustomergender,
+            "GivenName" : newcustomerfirstname,
+            "Surname" : newcustomerlastname,
+            "StreetAddress" : newcustomerstreetaddress,
+            "ZipCode" : newcustomerzipcode,
+            "City" : newcustomercity,
+            "EmailAddress": newcustomeremailaddress,
+            "Username" : newcustomerusername,
+            "TelephoneNumber" : newcustomertelephonenumber,
+        }
+        outfile = open("newcustomerfile.json", "w")
+        print(json.dumps(newcustomerdict))
+        json.dump(newcustomerdict, outfile)
+
+
     
     def createBook(self):
         """
@@ -130,7 +171,7 @@ class Subscriber(Person):
     # nu worden deze variableen nog in Customer class gemaakt, maar misschien kunen die al in
     # person class gedefineerd worden? 
 
-    def __init__(self, userNumber, gender, nameSet, givenName, surName, streetAdress, zipCode, city, emailAdress, userName, password, telephoneNumber):
+    def __init__(self, userNumber, gender, nameSet, givenName, surName, streetAdress, zipCode, city, emailAdress, userName, telephoneNumber):
         self.userNumber = userNumber
         self.gender = gender
         self.nameSet = nameSet
@@ -141,7 +182,6 @@ class Subscriber(Person):
         self.city = city
         self.emailAdress = emailAdress
         self.userName = userName
-        self.password = password
         self.telephoneNumber = telephoneNumber
 
     def __str__(self):
@@ -252,7 +292,7 @@ def MenuNoLogin():
             boekje.GetInfo()
         
         elif answer == "5":
-            hans = Subscriber(5,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
+            hans = Subscriber(5,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "0619283755")
 
             print(hans)
         else:
@@ -266,7 +306,7 @@ def MenuLibrarian():
     possibleanswers = ["1", "2","3","4"]
 
     while answer not in possibleanswers:
-        print(" 1. Modify catalog \n 2. Load / make system backup \n 3. Do something else idk \n 4. Logout ")
+        print(" 1. Modify catalog \n 2. Create new subscriber \n 3. Do something else idk \n 4. Load / make system backup \n 9. Logout ")
 
         answer = input()
 
@@ -275,14 +315,16 @@ def MenuLibrarian():
             a = input()
             MenuLibrarian()
         elif answer == "2":
-            print(r"¯\(°_o)/¯")
-            a = input()
-            MenuLibrarian()
+            Librarian.createSubscriber()
         elif answer == "3":
             print(r"¯\(°_o)/¯")
             a = input()
             MenuLibrarian()
         elif answer == "4":
+            print(r"¯\(°_o)/¯")
+            a = input()
+            MenuLibrarian()
+        elif answer == "9":
             currentUser = "nobody"
             print("Logging out...")
             a = input()
@@ -307,6 +349,6 @@ def RunProgram():
 ###########################################################
 
 
-RunProgram()
+Librarian.createSubscriber()
 
 
