@@ -5,7 +5,7 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 """
 import PLSbackend as BE
 
-currentUser = "nobody"
+currentUser = "Librarian"
 
 print(
 
@@ -72,7 +72,7 @@ def MenuLibrarian():
             a = input()
             MenuLibrarian()
         elif answer == "2":
-            BE.Librarian.createSubscriber()
+            BE.Librarian.registerCustomer('1', 'Dutch', 'Male', 'Mike', 'Jansen', 'test', '1234', 'Ridderkerk', 'test@test.nl', 'test', '0612345678')
         elif answer == "3":
             print(r"¯\(°_o)/¯")
             a = input()
@@ -93,7 +93,7 @@ def MenuLibrarian():
         answer = input("Press any key to continue ...")
 
 
-currentUser = "nobody"
+# currentUser = "nobody"
 
 def RunProgram():
     if currentUser == "nobody":

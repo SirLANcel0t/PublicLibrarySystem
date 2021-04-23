@@ -5,8 +5,20 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 """
 import os
 import json
-import jsonloads
-from jsonloads import data
+
+data = {}
+data['librarians'] = []
+data['customers'] = []
+data['books'] = []
+
+with open('json/books.json') as f:
+    data['books'] = json.load(f)
+
+with open('json/customers.json') as f:
+    data['customers'] = json.load(f)
+
+with open('json/librarians.json') as f:
+    data['librarians'] = json.load(f)
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
@@ -34,6 +46,11 @@ class PublicLibrary:
     Is dit een abstract class? worden hier objecten van gemaakt? of blijft het alleen bij deze class? 
     """
     listOfCustomers = list()
+
+    @staticmethod
+    def writeJson(filePath, dataName):
+        with open(filePath, 'w') as json_file:
+            json.dump(dataName, json_file, indent=4)
 
     @staticmethod
     def backupSystem():
@@ -76,8 +93,6 @@ class PublicLibrary:
         print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
 
 
-
-
 class Person:
     """
     dit is de class Person, een superclass van librarian  en Customer. person is een 
@@ -86,6 +101,7 @@ class Person:
     """ 
     mayAddBooks = False
 class Librarian(Person):
+    global data
     """
     librarian is een subclass van Person. de librarian is de beheerder van het systeem en kan het systeem backuppen,
     een backup inladen, bookitems toevoegen en verwijderen, klanten toevoegen (zowel individueel als via een CSV bestand)
@@ -93,55 +109,47 @@ class Librarian(Person):
     van librarian kunnen wel objecten gemaakt worden. je zou immers meerdere librarians kunnen hebben
     """
 
+    @staticmethod
+    def registerEmployee(fullName, username, password):
+        data['librarians'].append({
+            'name': fullName,
+            'username': username,
+            'password': password
+        })
+    PublicLibrary.writeJson('json/librarians.json', data['librarians'])
+
     mayAddBooks = True
     @staticmethod
-    def createSubscriber():
-        """
-        Maak een nieuwe klantaccount (Subscriber)
-        """
-
-        newcustomernumber = int(input("Enter a customer number: "))
-        # if customernumber in customer.json ofzoiets return een error
-        # zegmaar dat als dit getal al bestaat in de customerlijst dat je dan een waarschuwing krijgt
-
-        newcustomergender = ""
-        while (newcustomergender != "male") and (newcustomergender != "female") and (newcustomergender != "other"):
-            newcustomergender = input("Enter customer gender (male / female / other): ")
-        nameSet = "Dutch"
-        newcustomerfirstname = input("Enter customer's first name: ")
-        newcustomerlastname = input("Enter customer's last name: ")
-        newcustomerstreetaddress = input("Enter customer's adress: ")
-        newcustomerzipcode = input("Enter customer's zipcode: ")
-        newcustomercity = input("Enter customer's city: ")
-        newcustomeremailaddress = input("Enter customer's email adress: ")
-        newcustomerusername = input("Enter customer's username: ")
-        newcustomertelephonenumber = int(input("Enter customer's telephone number: "))
-
-        # en dit dan converteren naar JSON om het daarna in een bestand te schrijven
-        newcustomerdict =  {
-            "Number" : newcustomernumber,
-            "NameSet" : nameSet,
-            "Gender" : newcustomergender,
-            "GivenName" : newcustomerfirstname,
-            "Surname" : newcustomerlastname,
-            "StreetAddress" : newcustomerstreetaddress,
-            "ZipCode" : newcustomerzipcode,
-            "City" : newcustomercity,
-            "EmailAddress": newcustomeremailaddress,
-            "Username" : newcustomerusername,
-            "TelephoneNumber" : newcustomertelephonenumber,
-        }
-        outfile = open("newcustomerfile.json", "a")
-        print(json.dumps(newcustomerdict))
-        json.dump(newcustomerdict, outfile)
+    def registerCustomer(customernumber, nameSet, customergender, customerfirstname, customerlastname, customerstreetaddress, customerzipcode, customercity, customeremailaddress, customerusername, customertelephonenumber):
+        data['customers'].append({
+            'Number' : customernumber,
+            'NameSet' : nameSet,
+            'Gender' : customergender,
+            'GivenName' : customerfirstname,
+            'Surname' : customerlastname,
+            'StreetAddress' : customerstreetaddress,
+            'ZipCode' : customerzipcode,
+            'City' : customercity,
+            'EmailAddress' : customeremailaddress,
+            'Username' : customerusername,
+            'TelephoneNumber' : customertelephonenumber,
+        })
+        PublicLibrary.writeJson('json/customers.json', data['customers'])
 
 
-    
-    def createBook(self):
-        """
-        Maak een nieuw boek aan met naam enzo
-        """
-        pass
+    @staticmethod
+    def registerBook(author, country, imageLink, language, link, pages, title, year):
+        data['books'].append({
+            'title': title,
+            'author': author,
+            'pages': pages,
+            'year': year,
+            'country': country,
+            'language': language,
+            'imageLink': imageLink,
+            'link': link
+        })
+        PublicLibrary.writeJson('json/books.json', data['books'])
 
 
 
@@ -327,4 +335,3 @@ class LoanItem:
         self.dateOfLoan = dateOfLoan
         self.dateOfReturn = dateOfReturn
         self.userOfItem = username
-
