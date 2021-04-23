@@ -5,6 +5,8 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 """
 import os
 import json
+import jsonloads
+from jsonloads import data
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
