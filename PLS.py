@@ -39,10 +39,6 @@ def MenuNoLogin():
         elif answer == "2": 
             BE.Catalog.BookBrowser()
 
-        elif answer == "9":
-            print("OK, cya")
-            break
-
         elif answer == "4":
             boekje = BE.Book("jezus", "israel", "heb ik niet", "hebreeuws", "internet hadden ze toen nog niet", 800, "de bijbel", 0)
 
@@ -52,6 +48,10 @@ def MenuNoLogin():
             hans = BE.Subscriber(5,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "0619283755")
 
             print(hans)
+
+        elif answer == "9":
+            print("OK, cya")
+            break
         else:
             print("Unrecognized command")
 
