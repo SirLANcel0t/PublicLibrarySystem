@@ -82,6 +82,7 @@ def MenuLibrarian():
 
         answer = input("Press any key to continue ...")
 
+currentUser = "nobody"
 
 def RunProgram():
     if currentUser == "nobody":
