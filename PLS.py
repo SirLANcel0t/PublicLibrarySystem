@@ -218,13 +218,6 @@ class LoanItem:
 
 
 
-nextInLine = 5
-# json bestand uitlezen en laatste cijfer zoeken
-
-
-
-
-
 print("Welcome to MLB Public Library System \nThis interface was made by Mike, Luuk and Bruno from class INF1D")
 
 
@@ -259,7 +252,7 @@ def MenuNoLogin():
             boekje.GetInfo()
         
         elif answer == "5":
-            hans = Subscriber(nextInLine,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
+            hans = Subscriber(5,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "zomaareenwachtwoord", "0619283755")
 
             print(hans)
         else:
