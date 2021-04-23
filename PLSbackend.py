@@ -99,7 +99,14 @@ class Person:
     abstract class want van Person bestaan geen objecten (als het goed is). 
 
     """ 
-    mayAddBooks = False
+
+    #de constructor van Person
+    def __init__(self, name, username):
+        self.Name = name
+        self.userName = username
+
+
+    
 class Librarian(Person):
     global data
     """
@@ -107,8 +114,28 @@ class Librarian(Person):
     een backup inladen, bookitems toevoegen en verwijderen, klanten toevoegen (zowel individueel als via een CSV bestand)
     boeken uitlenen voor klanten, en via een JSON bestand allemaal boeken inladen. 
     van librarian kunnen wel objecten gemaakt worden. je zou immers meerdere librarians kunnen hebben
+
+    een voorbeeld hoe je een librarian maakt (in PLS.py) : 
+
+    Bibliotheekmedewerker_Marianne = BE.Librarian("Marianne", "marriewarrie12345", "supergeheimwachtwoord")
+    print(Bibliotheekmedewerker_Marianne)
+    Bibliotheekmedewerker_Marianne.revealpassword()
     """
 
+
+
+    def __init__(self, name, username, password):
+        Person.__init__(self, name, username)
+        self.password = password
+
+    def __str__(self):
+        return f" Name: {self.Name} \n Username: {self.userName} \n"
+    
+    def revealpassword(self):
+        print(self.password)
+
+
+    mayAddBooks = True
     @staticmethod
     def registerEmployee(fullName, username, password):
         data['librarians'].append({
