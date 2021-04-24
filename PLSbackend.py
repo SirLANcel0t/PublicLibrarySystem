@@ -74,20 +74,6 @@ class PublicLibrary:
             data = json.load(f)
 
     @staticmethod
-    def loadCustomers(customerFile):
-        """
-        Het inladen van een lijst met klanten middels een .CSV bestand.
-        """
-        pass
-    @staticmethod
-    def exportCustomers():
-        """
-        Klanten worden ingeladen middels het .CSV bestand wat we meegekregen hebben vanuit de opdracht, dus het is aannemelijk
-        om er vanuit te gaan dat het exporteren van klanten ook in een .CSV bestand moet.
-        Is deze functie overbodig? Is dit onderdeel van de functie backupSystem? 
-        """
-        pass
-    @staticmethod
     def loginUser():
         pass
 
