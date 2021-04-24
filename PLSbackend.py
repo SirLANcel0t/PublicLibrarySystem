@@ -79,12 +79,12 @@ class PublicLibrary:
         loggedIn = False
         with open('json/librarians.json') as f:
             data['librarians'] = json.load(f)
-            for i in data['librarian']:
+            for i in data['librarians']:
                 if userInput == i['username'] and passInput == i['password']:
                     loggedIn = True
                 else:
                     loggedIn = False
-        return loggedIn
+        return (loggedIn, userInput)
 
 class Person:
     """
