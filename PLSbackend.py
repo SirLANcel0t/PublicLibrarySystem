@@ -86,14 +86,6 @@ class PublicLibrary:
                     loggedIn = False
         return loggedIn
 
-    @staticmethod
-    def BookBrowser():
-        """
-        Het zoeken van boeken. w8 moet dit niet in de Catalog?
-        """
-        print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
-
-
 class Person:
     """
     dit is de class Person, een superclass van librarian  en Customer. person is een 
