@@ -74,8 +74,17 @@ class PublicLibrary:
             data = json.load(f)
 
     @staticmethod
-    def loginUser():
-        pass
+    def loginUser(userInput, passInput):
+        global data
+        loggedIn = False
+        with open('json/librarians.json') as f:
+            data['librarians'] = json.load(f)
+            for i in data['librarian']:
+                if userInput == i['username'] and passInput == i['password']:
+                    loggedIn = True
+                else:
+                    loggedIn = False
+        return loggedIn
 
     @staticmethod
     def BookBrowser():
