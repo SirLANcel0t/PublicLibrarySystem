@@ -59,7 +59,9 @@ class PublicLibrary:
         De vraag is alleen, moet alles in een .JSON bestand? Of gaan de boeken in een JSON bestand en de klanten
         in een .CSV bestand? 
         """
-        pass
+        with open('json/backup.json', 'w') as json_file:
+            json.dump(data, json_file, indent=4)
+
     @staticmethod
     def loadSystemBackup(backupFile):
         """
