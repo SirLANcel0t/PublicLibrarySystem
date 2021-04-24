@@ -86,12 +86,6 @@ class PublicLibrary:
                     loggedIn = False
         return loggedIn
 
-    @staticmethod
-    def BookBrowser():
-        """
-        Het zoeken van boeken. w8 moet dit niet in de Catalog?
-        """
-        print("You typed: 2. Browse Books . But I also don't know how to do that yet. Please check back later")
 
 
 class Person:
@@ -247,65 +241,80 @@ class Catalog:
     @staticmethod 
     def BookBrowser():
         clear()
-        print("Tada een lijst met boeken")
+        print("\nTada een lijst met boeken\n")
 
         def bookView():
             bookIDCounter = 1
-            with open('books.json') as json_file:
-                bookCatalog = json.load(json_file)
-                for book in bookCatalog['books']:
-                    print(f"Book ID: {bookIDCounter}")
-                    print('Title: ' + book['title'])
-                    print('Author: ' + book['author'])
-                    print('Language: ' + book['language'])
-                    print('')
-                    bookIDCounter += 1
-            print("""
-            Would you like to:
-            1. Pick a book.
-            2. Search book by Title.
-            3. Search by Author. 
-            4. Search by publishing year.
-            5. Search by Language.
-            """)
-            bookViewMenuChoice = input(">>> ")
+            for book in data['books']:
+                print(f"Book ID: {bookIDCounter}")
+                print('Title: ' + book['title'])
+                print('Author: ' + book['author'])
+                print('Language: ' + book['language'])
+                print('')
+                bookIDCounter += 1
+            print("\nWould you like to:\n 1. Pick a book.\n 2. Search book by Title.\n 3. Search by Author. \n 4. Search by publishing year.\n 5. Search by Language.")
+            bookViewMenuChoice = input("\n>>> ")
             if bookViewMenuChoice == "1":
-                detailedBookView(bookIDCounter, bookCatalog)
+                detailedBookView(bookIDCounter)
             elif bookViewMenuChoice == "2":
-                searchBookCatalog(bookCatalog, "title")
+                searchBookCatalog("title")
             elif bookViewMenuChoice == "3":
-                searchBookCatalog(bookCatalog, "author")
+                searchBookCatalog("author")
             elif bookViewMenuChoice == "4":
-                searchBookCatalog(bookCatalog, "year")
+                searchBookCatalog("year")
             elif bookViewMenuChoice == "5":
-                searchBookCatalog(bookCatalog, "language")
+                searchBookCatalog("language")
             else:
                 print("Entered wrong number. Please try again.")
 
-        def searchBookCatalog(bookCatalog, value):
-            userBookSearch = input("Please enter the exact phrase.\n>>> ")
-            for book in bookCatalog['books']:
+        def searchBookCatalog( value):
+            bookFound = False
+            userBookSearch = input(f"\nPlease enter the exact phrase for {value} search.\n>>> ")
+            for book in data['books']:
                 if userBookSearch == book[value]:
                     print('Title: ' + book['title'])
                     print('Author: ' + book['author'])
-                    print('Language: ' + book['year'])
+                    print('Total pages: ' + book['pages'])
+                    print('Published year: ' + book['year'])
                     print('Language: ' + book['language'])
                     print('Country: ' + book['country'])
-                    print('Cover Imagse: ' + book['imageCover'])
+                    print('Cover Image link: ' + book['imageLink'])
+                    print('Website link: ' + book['link'])
+                    bookFound = True
+            if bookFound == True:
+                detailedBookChoice()
+            else:
+                print(f"\nThere is no book which {value} matches your search phrase.")
+                possibleAnswers = ["1", "2"]
+                answer = ""
+                while answer not in possibleAnswers:
+                    answer = input("\nWhat would you like to do.\n 1. Try another search.\n 2. View all books\n >> ")
+                    if answer == "1":
+                        bookView()
+                    elif answer == "2":
+                        bookView()
+                    else:
+                        print("Command not recognized, please try again.")
 
-        def detailedBookView(bookIDCounter, bookCatalog):
-            print("Please pick a book to see a more detailed view.")
+
+
+
+
+        def detailedBookView(bookIDCounter):
+            print("\nPlease pick a book to see a more detailed view.")
             pickedBookID = int(input(">>> "))
             if pickedBookID > bookIDCounter:
-                print("This Book ID does not exist. Please try again.")
-                detailedBookView(bookIDCounter, bookCatalog)
+                print("\nThis Book ID does not exist. Please try again.")
+                detailedBookView(bookIDCounter)
             clear()
-            print('Title: ' + bookCatalog['books'][pickedBookID-1]['title'])
-            print('Author: ' + bookCatalog['books'][pickedBookID-1]['author'])
-            print('Language: ' + bookCatalog['books'][pickedBookID-1]['year'])
-            print('Language: ' + bookCatalog['books'][pickedBookID-1]['language'])
-            print('Country: ' + bookCatalog['books'][pickedBookID-1]['country'])
-            print('Cover Imagse: ' + bookCatalog['books'][pickedBookID-1]['imageCover'])
+            print('Title: ' + data['books'][pickedBookID-1]['title'])
+            print('Author: ' + data['books'][pickedBookID-1]['author'])
+            print('Total pages: ' + data['books'][pickedBookID-1]['pages'])
+            print('Published year: ' + data['books'][pickedBookID-1]['year'])
+            print('Language: ' + data['books'][pickedBookID-1]['language'])
+            print('Country: ' + data['books'][pickedBookID-1]['country'])
+            print('Cover Image link: ' + data['books'][pickedBookID-1]['imageLink'])
+            print('Website link: ' + data['books'][pickedBookID-1]['link'])
             detailedBookChoice()
 
 
@@ -314,12 +323,12 @@ class Catalog:
             userDetailedChoise = int(input(">>> "))
 
             if userDetailedChoise == 1:
-                print("Right on, enjoy the book mate!")
+                print("\nRight on, enjoy the book mate!")
                 exit()
             elif userDetailedChoise == 2:
                 Catalog.BookBrowser()
             elif userDetailedChoise == 3:
-                print("Sir, this is a Public Library System")
+                print("\nSir, this is a Public Library System")
                 detailedBookChoice()
             else:
                 detailedBookChoice()
