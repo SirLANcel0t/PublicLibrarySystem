@@ -147,9 +147,11 @@ class Librarian(Person):
 
     mayAddBooks = True
     @staticmethod
-    def registerCustomer(customernumber, nameSet, customergender, customerfirstname, customerlastname, customerstreetaddress, customerzipcode, customercity, customeremailaddress, customerusername, customertelephonenumber):
+    def registerCustomer(nameSet, customergender, customerfirstname, customerlastname, customerstreetaddress, customerzipcode, customercity, customeremailaddress, customerusername, customertelephonenumber):
+        
+        customerNumber = str(len(data['customers'])+1)
         data['customers'].append({
-            'Number' : customernumber,
+            'Number' : customerNumber,
             'NameSet' : nameSet,
             'Gender' : customergender,
             'GivenName' : customerfirstname,
@@ -265,17 +267,17 @@ class Catalog:
             4. Search by publishing year.
             5. Search by Language.
             """)
-            bookViewMenuChoice = int(input(">>> "))
-            if bookViewMenuChoice == 1:
+            bookViewMenuChoice = input(">>> ")
+            if bookViewMenuChoice == "1":
                 detailedBookView(bookIDCounter, bookCatalog)
-            elif bookViewMenuChoice == 2:
+            elif bookViewMenuChoice == "2":
                 searchBookCatalog(bookCatalog, "title")
-            elif bookViewMenuChoice == 3:
+            elif bookViewMenuChoice == "3":
                 searchBookCatalog(bookCatalog, "author")
-            elif bookViewMenuChoice == 4:
+            elif bookViewMenuChoice == "4":
                 searchBookCatalog(bookCatalog, "year")
-            elif bookViewMenuChoice == 5:
-                searchBookCatalog(bookCatalog, "year")
+            elif bookViewMenuChoice == "5":
+                searchBookCatalog(bookCatalog, "language")
             else:
                 print("Entered wrong number. Please try again.")
 

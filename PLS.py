@@ -7,6 +7,7 @@ import PLSbackend as BE
 
 currentUser = "Librarian"
 
+BE.clear()
 print(
 
 "▒█▀▄▀█ ▒█░░░ ▒█▀▀█ 　 ▒█░░░ ░▀░ █▀▀▄ █▀▀█ █▀▀█ █▀▀█ █░░█ 　 █▀▀ █░░█ █▀▀ ▀▀█▀▀ █▀▀ █▀▄▀█ \n"+
@@ -53,7 +54,7 @@ def MenuNoLogin():
             print("OK, cya")
             break
         else:
-            print("Unrecognized command")
+            print("Command not recognized, please try again.")
 
         answer = input("Press any key to continue ...")
 
@@ -62,17 +63,16 @@ def MenuLibrarian():
     answer = ""
     possibleanswers = ["1", "2","3","4","9"]
 
+    print(f"\nWelcome, Librarian. What would you like to do?")
     while answer not in possibleanswers:
-        print(" 1. Modify catalog \n 2. Create new subscriber \n 3. View loaned items \n 4. Load / make system backup \n 9. Logout ")
+        print("\n 1. Add book to database. \n 2. Create new subscriber. \n 3. View loaned items. \n 4. Load / make system backup. \n 9. Logout. \n")
 
-        answer = input()
+        answer = input(" >> ")
 
         if answer == "1":
-            print(r"¯\(°_o)/¯")
-            a = input()
-            MenuLibrarian()
+            registerBook()
         elif answer == "2":
-            BE.Librarian.registerCustomer('1', 'Dutch', 'Male', 'Mike', 'Jansen', 'test', '1234', 'Ridderkerk', 'test@test.nl', 'test', '0612345678')
+            registerCustomer()
         elif answer == "3":
             print(r"¯\(°_o)/¯")
             a = input()
@@ -88,9 +88,67 @@ def MenuLibrarian():
             RunProgram()
 
         else: 
-            print("Unrecognised command!")
+            print("Command not recognized, please try again.")
 
-        answer = input("Press any key to continue ...")
+        # answer = input("Press any key to continue ...")
+
+def registerCustomer():
+    print("To register a new customer we need some information about the customer.")
+    language = input("Language -> ")
+    gender = input("Gender -> ")
+    firstName = input("First name -> ")
+    lastName = input("Last name -> ")
+    adress = input("Adress -> ")
+    zipCode = input("ZipCode -> ")
+    city = input("City -> ")
+    email = input("Email -> ")
+    username = input("Username -> ")
+    phoneNumber = input("Phone number -> ")
+    try:
+        BE.Librarian.registerCustomer(language, gender, firstName, lastName, adress, zipCode, city, email, username, phoneNumber)
+        print("\nCustomer succesfully registered.")
+    except:
+        print("\nRegistering went wrong. Please try again.")
+        registerCustomer()
+    addAnotherCustomer = ""
+    possibleAnswers = ["1","2"]
+    while addAnotherCustomer not in possibleAnswers:
+        addAnotherCustomer = input("\nWould you like to register another customer?\n 1. Yes, please.\n 2. No, thank you.\n")
+        if addAnotherCustomer == "1":
+            registerCustomer()
+        elif addAnotherCustomer == "2":
+            print("\n")
+            MenuLibrarian()
+        else:
+            print("Command not recognized, please try again.")
+
+def registerBook():
+    print("To register a new book we need some information.")
+    title = input("Book title -> ")
+    author = input("Book Author -> ")
+    pages = input("Total pages -> ")
+    year = input("Publishing year -> ")
+    country = input("Country -> ")
+    language = input("Book Language -> ")
+    imageLink = input("Image link -> ")
+    link = input("Website link -> ")
+    try:
+        BE.Librarian.registerBook(author, country, imageLink, language, link, pages, title, year)
+        print("\nBook was succesfully added to the database.")
+    except:
+        print("\nSomething went wrong. Please try again.")
+        registerBook()
+    addAnotherBook = ""
+    possibleAnswers = ["1","2"]
+    while addAnotherBook not in possibleAnswers:
+        addAnotherBook = input("\nWould you like to add another book?\n 1. Yes, please.\n 2. No, thank you.\n")
+        if addAnotherBook == "1":
+            registerBook()
+        elif addAnotherBook == "2":
+            print("\n")
+            MenuLibrarian()
+        else:
+            print("Command not recognized, please try again.")
 
 
 # currentUser = "nobody"
@@ -99,7 +157,6 @@ def RunProgram():
     if currentUser == "nobody":
         MenuNoLogin()
     elif currentUser == "Librarian":
-        print(f"Welcome, Librarian. What would you like to do?")
         MenuLibrarian()
 
 
