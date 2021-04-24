@@ -10,6 +10,7 @@ data = {}
 data['librarians'] = []
 data['customers'] = []
 data['books'] = []
+data['loanItems'] = []
 
 with open('json/books.json') as f:
     data['books'] = json.load(f)
@@ -19,6 +20,9 @@ with open('json/customers.json') as f:
 
 with open('json/librarians.json') as f:
     data['librarians'] = json.load(f)
+
+with open('json/loanItems.json') as f:
+    data['loanItems'] = json.load(f)
 
 clear = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
@@ -48,8 +52,8 @@ class PublicLibrary:
     listOfCustomers = list()
 
     @staticmethod
-    def writeJson(filePath, dataName):
-        with open(filePath, 'w') as json_file:
+    def writeJson(filePath, dataName, readmode = 'w'):
+        with open(filePath, readmode) as json_file:
             json.dump(dataName, json_file, indent=4)
 
     @staticmethod
@@ -223,7 +227,9 @@ class BookItem:
     Het verschil met Book en BookItem is dat Book zegmaar de informatie is over het boek in de applicatie,
     en BookItem is het daadwerkelijke boek. Als je een boek leent dan leen je een BookItem en niet een Book. 
     """
-    pass
+    def __init__(self, book, amount):
+        self.book = book
+        self.amount = amount
 
 class Catalog:
 
@@ -339,21 +345,13 @@ class LoanAdministration:
     In deze class LoanAdministration staan de LoanItems oftewel de informatie over uitgeleende items.
     Dat zijn uitgeleende boeken met bijbehorende informatie over wanneer ze terug moeten
     """
-    # een lijst met alle loanitems
-    loanItems = list()
+
+    loanItems = []
 
     @staticmethod
-    def LoanMenu():
-        print("Entering loan administration menu ...")
-        print("")
-        possibleanswers = ["1", "2", "3", "4", "5", "9"]
-        answer = ""
-        while answer not in possibleanswers:
-            pass
-    @staticmethod
-    def GetInfo(self):
-        for item in self.loanItems:
-            print(f" Book: {item.bookItem}\n Date loaned: {item.dateOfLoan}\n Expected return date: {item.dateOfReturn}\n")
+    def GetInfo():
+        for item in LoanAdministration.loanItems:
+            print(f" Book: {item.bookItem}\n Date loaned: {item.dateOfLoan}\n Expected return date: {item.dateOfReturn}\n User: {item.userOfItem}\n")
 
 class LoanItem:
     """

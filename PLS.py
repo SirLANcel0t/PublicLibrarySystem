@@ -31,7 +31,7 @@ def MenuNoLogin():
     possibleanswers = ["1", "2", "3", "4", "5", "9"]
     answer = ""
     while answer not in possibleanswers:
-        print(f"Hi, {currentUser}. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje) \n 5. (test user object) \n")
+        print(f"Hi, {currentUser}. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n")
 
         answer = input()
 
@@ -49,15 +49,6 @@ def MenuNoLogin():
         elif answer == "2": 
             BE.Catalog.BookBrowser()
 
-        elif answer == "4":
-            boekje = BE.Book("jezus", "israel", "heb ik niet", "hebreeuws", "internet hadden ze toen nog niet", 800, "de bijbel", 0)
-
-            boekje.GetInfo()
-        
-        elif answer == "5":
-            hans = BE.Subscriber(5,"male", "Dutch", "Hans", "de Boer", "Lange Lindelaan 14", "3011BB", "Rotterdam", "hansjepansje@gmail.com", "masterhans123", "0619283755")
-
-            print(hans)
 
         elif answer == "9":
             print("OK, cya")
@@ -74,7 +65,7 @@ def MenuLibrarian():
 
     print(f"\nWelcome, Librarian. What would you like to do?")
     while answer not in possibleanswers:
-        print("\n 1. Add book to database. \n 2. Create new subscriber. \n 3. View loaned items. \n 4. Load / make system backup. \n 5. Browse Books \n 9. Logout. \n")
+        print("\n 1. Add book to database. \n 2. Create new subscriber. \n 3. Loan books + loan administration \n 4. Load / make system backup. \n 5. Browse Books \n 9. Logout. \n")
 
         answer = input(" >> ")
 
@@ -83,8 +74,35 @@ def MenuLibrarian():
         elif answer == "2":
             registerCustomer()
         elif answer == "3":
-            print("loaned item ook nog niks")
-            a = input()
+            print("You have selected: 3. Loan books + loan administration")
+            possibleanswers = ["1", "2","9"]
+            answer = ""
+
+            while answer not in possibleanswers:
+                print(f"\n 1. Loan a book to a customer \n 2. View loan administration \n 9. Return")
+                answer = input()
+                if answer == "1":
+                    print("You have selected 1. Loan a book to a customer")
+                    # zoek een boek 
+                    # which book do you want to loan?
+
+                    whichbook = input("hier het boek waar het om gaat {naam van het boek in de json}: ")
+                    dateloaned = input("welke datum hij uitgeleend wordt (DD-MM-YYYY)")
+                    datereturn = input("welke datum hij terug moet (DD-MM-YYYY)")
+                    loanuser = input("om welke gebruiker het gaat. hierin de username van een gebruiker in customers.json")
+                    newLoanItem = BE.LoanItem(whichbook, dateloaned, datereturn, loanuser)
+
+                    BE.LoanAdministration.loanItems.append(newLoanItem)
+                    # BE.PublicLibrary.writeJson('json/loanItems.json',  newLoanItem.__dict__ , 'a+')
+                    
+                elif answer == "2":
+                    print("You have selected 2. View loan administration")
+                    print("Viewing all loaned books. Press any key to continue... ")
+                    a = input()
+                    BE.LoanAdministration.GetInfo()
+                elif answer == "9":
+                    print("Returning to previous menu...")
+                    MenuLibrarian()
             MenuLibrarian()
         elif answer == "4":
             print("You have selected: 4. Load / make system backup")
