@@ -1,0 +1,13 @@
+[{
+    "bookItem": "ba",
+    "dateOfLoan": "ba",
+    "dateOfReturn": "ba",
+    "userOfItem": "bab"
+}
+,
+{
+    "bookItem": "testboek",
+    "dateOfLoan": "nu",
+    "dateOfReturn": "ooit",
+    "userOfItem": "mijzelf"
+}]
