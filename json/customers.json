@@ -1,3 +1,28 @@
 [
-
+    {
+        "Number": "1",
+        "NameSet": "Dutch",
+        "Gender": "Male",
+        "GivenName": "Mike",
+        "Surname": "Jansen",
+        "StreetAddress": "test",
+        "ZipCode": "1234",
+        "City": "Ridderkerk",
+        "EmailAddress": "test@test.nl",
+        "Username": "mjansen",
+        "TelephoneNumber": "0612345678"
+    },
+    {
+        "Number": "1",
+        "NameSet": "Dutch",
+        "Gender": "Male",
+        "GivenName": "Mike",
+        "Surname": "Jansen",
+        "StreetAddress": "test",
+        "ZipCode": "1234",
+        "City": "Ridderkerk",
+        "EmailAddress": "test@test.nl",
+        "Username": "mjansen",
+        "TelephoneNumber": "0612345678"
+    }
 ]

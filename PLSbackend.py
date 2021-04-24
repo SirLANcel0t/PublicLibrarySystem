@@ -54,6 +54,7 @@ class PublicLibrary:
 
     @staticmethod
     def backupSystem():
+        global data
         """
         een systeembackup slaat alle informatie over boeken en gebruikers op. 
         De vraag is alleen, moet alles in een .JSON bestand? Of gaan de boeken in een JSON bestand en de klanten
@@ -64,11 +65,14 @@ class PublicLibrary:
 
     @staticmethod
     def loadSystemBackup(backupFile):
+        global data
         """
         Het inladen van een gemaakte backup. Waarschijnlijk bestaat dit uit een .JSON bestand met boeken, en een .CSV bestand
         met klanten.
         """ 
-        pass
+        with open('json/backup.json') as f:
+            data = json.load(f)
+
     @staticmethod
     def loadCustomers(customerFile):
         """
