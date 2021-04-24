@@ -54,33 +54,25 @@ class PublicLibrary:
 
     @staticmethod
     def backupSystem():
+        global data
         """
         een systeembackup slaat alle informatie over boeken en gebruikers op. 
         De vraag is alleen, moet alles in een .JSON bestand? Of gaan de boeken in een JSON bestand en de klanten
         in een .CSV bestand? 
         """
-        pass
+        with open('json/backup.json', 'w') as json_file:
+            json.dump(data, json_file, indent=4)
+
     @staticmethod
     def loadSystemBackup(backupFile):
+        global data
         """
         Het inladen van een gemaakte backup. Waarschijnlijk bestaat dit uit een .JSON bestand met boeken, en een .CSV bestand
         met klanten.
         """ 
-        pass
-    @staticmethod
-    def loadCustomers(customerFile):
-        """
-        Het inladen van een lijst met klanten middels een .CSV bestand.
-        """
-        pass
-    @staticmethod
-    def exportCustomers():
-        """
-        Klanten worden ingeladen middels het .CSV bestand wat we meegekregen hebben vanuit de opdracht, dus het is aannemelijk
-        om er vanuit te gaan dat het exporteren van klanten ook in een .CSV bestand moet.
-        Is deze functie overbodig? Is dit onderdeel van de functie backupSystem? 
-        """
-        pass
+        with open('json/backup.json') as f:
+            data = json.load(f)
+
     @staticmethod
     def loginUser():
         pass
