@@ -64,7 +64,7 @@ class PublicLibrary:
             json.dump(data, json_file, indent=4)
 
     @staticmethod
-    def loadSystemBackup(backupFile):
+    def loadSystemBackup():
         global data
         """
         Het inladen van een gemaakte backup. Waarschijnlijk bestaat dit uit een .JSON bestand met boeken, en een .CSV bestand

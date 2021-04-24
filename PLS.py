@@ -74,13 +74,34 @@ def MenuLibrarian():
         elif answer == "2":
             registerCustomer()
         elif answer == "3":
-            print(r"¯\(°_o)/¯")
+            print("loaned item ook nog niks")
             a = input()
             MenuLibrarian()
         elif answer == "4":
-            print(r"¯\(°_o)/¯")
-            a = input()
-            MenuLibrarian()
+            print("You have selected: 4. Load / make system backup")
+            possibleanswers = ["1", "2","9"]
+            answer = ""
+
+            while answer not in possibleanswers:
+                print(f"\n 1. Load system backup \n 2. Make system backup \n 9. Return to previous menu")
+                answer = input()
+                if answer == "1":
+                    #loadsystembackup()
+                    BE.PublicLibrary.loadSystemBackup()
+                    print("Backup loaded.")
+                    a = input()
+                    MenuLibrarian()
+                elif answer == "2":
+                    #makebackup
+                    
+                    BE.PublicLibrary.backupSystem()
+                    print("Backup created. ")
+                    a = input()
+                    MenuLibrarian()
+                elif answer == "9":
+                    print("Returning to previous menu...")
+                    MenuLibrarian()
+
         elif answer == "9":
             currentUser = "nobody"
             print("Logging out...")
