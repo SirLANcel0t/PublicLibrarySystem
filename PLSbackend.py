@@ -64,7 +64,7 @@ class PublicLibrary:
             json.dump(data, json_file, indent=4)
 
     @staticmethod
-    def loadSystemBackup(backupFile):
+    def loadSystemBackup():
         global data
         """
         Het inladen van een gemaakte backup. Waarschijnlijk bestaat dit uit een .JSON bestand met boeken, en een .CSV bestand
@@ -79,14 +79,12 @@ class PublicLibrary:
         loggedIn = False
         with open('json/librarians.json') as f:
             data['librarians'] = json.load(f)
-            for i in data['librarian']:
+            for i in data['librarians']:
                 if userInput == i['username'] and passInput == i['password']:
                     loggedIn = True
                 else:
                     loggedIn = False
-        return loggedIn
-
-
+        return (loggedIn, userInput)
 
 class Person:
     """

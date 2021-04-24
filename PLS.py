@@ -4,8 +4,10 @@ Analyse 3 summative assignment. Gemaakt door Mike, Luuk en Bruno uit INF1D
 
 """
 import PLSbackend as BE
+from PLSbackend import data
 
-currentUser = "nobody"
+
+currentUser = "anonymous user"
 
 BE.clear()
 print(
@@ -29,13 +31,20 @@ def MenuNoLogin():
     possibleanswers = ["1", "2", "3", "4", "5", "9"]
     answer = ""
     while answer not in possibleanswers:
-        print("Hi, anonymous user. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje) \n 5. (test user object) \n")
+        print(f"Hi, {currentUser}. \nWhat would you like to do? (type the number) \n 1. Login \n 2. Browse books \n 3. Exit Program \n 4. (test boekje) \n 5. (test user object) \n")
 
         answer = input()
 
 
         if answer == "1" :
-            BE.PublicLibrary.loginUser()
+            username = input("Enter username: ")
+            password = input("Enter password: ")
+            loggedIn, currentUser = BE.PublicLibrary.loginUser(username,password)
+            if loggedIn:
+                MenuLibrarian()
+            else:
+                print("Login failed. Please try again")
+
 
         elif answer == "2": 
             BE.Catalog.BookBrowser()
@@ -61,11 +70,11 @@ def MenuNoLogin():
 def MenuLibrarian():
     global currentUser
     answer = ""
-    possibleanswers = ["1", "2","3","4","9"]
+    possibleanswers = ["1", "2","3","4", "5","9"]
 
     print(f"\nWelcome, Librarian. What would you like to do?")
     while answer not in possibleanswers:
-        print("\n 1. Add book to database. \n 2. Create new subscriber. \n 3. View loaned items. \n 4. Load / make system backup. \n 9. Logout. \n")
+        print("\n 1. Add book to database. \n 2. Create new subscriber. \n 3. View loaned items. \n 4. Load / make system backup. \n 5. Browse Books \n 9. Logout. \n")
 
         answer = input(" >> ")
 
@@ -74,15 +83,37 @@ def MenuLibrarian():
         elif answer == "2":
             registerCustomer()
         elif answer == "3":
-            print(r"¯\(°_o)/¯")
+            print("loaned item ook nog niks")
             a = input()
             MenuLibrarian()
         elif answer == "4":
-            print(r"¯\(°_o)/¯")
-            a = input()
-            MenuLibrarian()
+            print("You have selected: 4. Load / make system backup")
+            possibleanswers = ["1", "2","9"]
+            answer = ""
+
+            while answer not in possibleanswers:
+                print(f"\n 1. Load system backup \n 2. Make system backup \n 9. Return to previous menu")
+                answer = input()
+                if answer == "1":
+                    #loadsystembackup()
+                    BE.PublicLibrary.loadSystemBackup()
+                    print("Backup loaded.")
+                    a = input()
+                    MenuLibrarian()
+                elif answer == "2":
+                    #makebackup
+                    
+                    BE.PublicLibrary.backupSystem()
+                    print("Backup created. ")
+                    a = input()
+                    MenuLibrarian()
+                elif answer == "9":
+                    print("Returning to previous menu...")
+                    MenuLibrarian()
+        elif answer == "5":
+            BE.Catalog.BookBrowser()
         elif answer == "9":
-            currentUser = "nobody"
+            currentUser = "anonymous user"
             print("Logging out...")
             a = input()
             RunProgram()
@@ -151,10 +182,9 @@ def registerBook():
             print("Command not recognized, please try again.")
 
 
-# currentUser = "nobody"
 
 def RunProgram():
-    if currentUser == "nobody":
+    if currentUser == "anonymous user":
         MenuNoLogin()
     elif currentUser == "Librarian":
         MenuLibrarian()
