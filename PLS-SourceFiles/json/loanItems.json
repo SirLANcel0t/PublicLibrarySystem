@@ -1,0 +1,802 @@
+[
+    {
+        "bookItem": "Things Fall Apart",
+        "author": "Chinua Achebe",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Fairy tales",
+        "author": "Hans Christian Andersen",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Divine Comedy",
+        "author": "Dante Alighieri",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Epic Of Gilgamesh",
+        "author": "Unknown",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Book Of Job",
+        "author": "Unknown",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "One Thousand and One Nights",
+        "author": "Unknown",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Nj\u00e1l's Saga",
+        "author": "Unknown",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Le P\u00e8re Goriot",
+        "author": "Honor\u00e9 de Balzac",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Molloy, Malone Dies, The Unnamable, the trilogy",
+        "author": "Samuel Beckett",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Decameron",
+        "author": "Giovanni Boccaccio",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Ficciones",
+        "author": "Jorge Luis Borges",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Wuthering Heights",
+        "author": "Emily Bront\u00eb",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Stranger",
+        "author": "Albert Camus",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Poems",
+        "author": "Paul Celan",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Journey to the End of the Night",
+        "author": "Louis-Ferdinand C\u00e9line",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Don Quijote De La Mancha",
+        "author": "Miguel de Cervantes",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Canterbury Tales",
+        "author": "Geoffrey Chaucer",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Stories",
+        "author": "Anton Chekhov",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Nostromo",
+        "author": "Joseph Conrad",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Great Expectations",
+        "author": "Charles Dickens",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Jacques the Fatalist",
+        "author": "Denis Diderot",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Berlin Alexanderplatz",
+        "author": "Alfred D\u00f6blin",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Idiot",
+        "author": "Fyodor Dostoevsky",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Possessed",
+        "author": "Fyodor Dostoevsky",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Brothers Karamazov",
+        "author": "Fyodor Dostoevsky",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Middlemarch",
+        "author": "George Eliot",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Invisible Man",
+        "author": "Ralph Ellison",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Medea",
+        "author": "Euripides",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Absalom, Absalom!",
+        "author": "William Faulkner",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Sound and the Fury",
+        "author": "William Faulkner",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Madame Bovary",
+        "author": "Gustave Flaubert",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Sentimental Education",
+        "author": "Gustave Flaubert",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Gypsy Ballads",
+        "author": "Federico Garc\u00eda Lorca",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "One Hundred Years of Solitude",
+        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Love in the Time of Cholera",
+        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Faust",
+        "author": "Johann Wolfgang von Goethe",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Dead Souls",
+        "author": "Nikolai Gogol",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Tin Drum",
+        "author": "G\u00fcnter Grass",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Devil to Pay in the Backlands",
+        "author": "Jo\u00e3o Guimar\u00e3es Rosa",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Hunger",
+        "author": "Knut Hamsun",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Old Man and the Sea",
+        "author": "Ernest Hemingway",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Iliad",
+        "author": "Homer",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Odyssey",
+        "author": "Homer",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "A Doll's House",
+        "author": "Henrik Ibsen",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Ulysses",
+        "author": "James Joyce",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Stories",
+        "author": "Franz Kafka",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Trial",
+        "author": "Franz Kafka",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Castle",
+        "author": "Franz Kafka",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The recognition of Shakuntala",
+        "author": "K\u0101lid\u0101sa",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Sound of the Mountain",
+        "author": "Yasunari Kawabata",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Zorba the Greek",
+        "author": "Nikos Kazantzakis",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Sons and Lovers",
+        "author": "D. H. Lawrence",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Independent People",
+        "author": "Halld\u00f3r Laxness",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Poems",
+        "author": "Giacomo Leopardi",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Golden Notebook",
+        "author": "Doris Lessing",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Pippi Longstocking",
+        "author": "Astrid Lindgren",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Diary of a Madman",
+        "author": "Lu Xun",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Children of Gebelawi",
+        "author": "Naguib Mahfouz",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Buddenbrooks",
+        "author": "Thomas Mann",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Magic Mountain",
+        "author": "Thomas Mann",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Moby Dick",
+        "author": "Herman Melville",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Essays",
+        "author": "Michel de Montaigne",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "History",
+        "author": "Elsa Morante",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Beloved",
+        "author": "Toni Morrison",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Tale of Genji",
+        "author": "Murasaki Shikibu",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Man Without Qualities",
+        "author": "Robert Musil",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Lolita",
+        "author": "Vladimir Nabokov",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Nineteen Eighty-Four",
+        "author": "George Orwell",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Metamorphoses",
+        "author": "Ovid",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Book of Disquiet",
+        "author": "Fernando Pessoa",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Tales",
+        "author": "Edgar Allan Poe",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "In Search of Lost Time",
+        "author": "Marcel Proust",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Gargantua and Pantagruel",
+        "author": "Fran\u00e7ois Rabelais",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Pedro P\u00e1ramo",
+        "author": "Juan Rulfo",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Masnavi",
+        "author": "Rumi",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Midnight's Children",
+        "author": "Salman Rushdie",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Bostan",
+        "author": "Saadi",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Season of Migration to the North",
+        "author": "Tayeb Salih",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Blindness",
+        "author": "Jos\u00e9 Saramago",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Hamlet",
+        "author": "William Shakespeare",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "King Lear",
+        "author": "William Shakespeare",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Othello",
+        "author": "William Shakespeare",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Oedipus the King",
+        "author": "Sophocles",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Red and the Black",
+        "author": "Stendhal",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Life And Opinions of Tristram Shandy",
+        "author": "Laurence Sterne",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Confessions of Zeno",
+        "author": "Italo Svevo",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Gulliver's Travels",
+        "author": "Jonathan Swift",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "War and Peace",
+        "author": "Leo Tolstoy",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Anna Karenina",
+        "author": "Leo Tolstoy",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Death of Ivan Ilyich",
+        "author": "Leo Tolstoy",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Adventures of Huckleberry Finn",
+        "author": "Mark Twain",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Ramayana",
+        "author": "Valmiki",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "The Aeneid",
+        "author": "Virgil",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Mahabharata",
+        "author": "Vyasa",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Leaves of Grass",
+        "author": "Walt Whitman",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Mrs Dalloway",
+        "author": "Virginia Woolf",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "To the Lighthouse",
+        "author": "Virginia Woolf",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    },
+    {
+        "bookItem": "Memoirs of Hadrian",
+        "author": "Marguerite Yourcenar",
+        "dateOfLoan": "none",
+        "dateOfReturn": "none",
+        "userOfItem": "none",
+        "isAvailable": true
+    }
+]
